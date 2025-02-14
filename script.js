@@ -15,6 +15,7 @@ botao.addEventListener('click', function() {
     }
 });
 
+
 // Lógica para inserir meus projetos no portifólio
 let projetos = [
     {
@@ -69,24 +70,29 @@ for(let i = 0; i < projetos.length; i++){
     imagem.alt = `Imagem do ${projeto.nome}`;
     projetoCard.appendChild(imagem);
 
+    let descricaoProjeto = document.createElement('div');
+    descricaoProjeto.classList.add('descricaoProjetos');
     let titulo = document.createElement('h3');
     titulo.textContent = projeto.nome;
-    projetoCard.appendChild(titulo);
+    descricaoProjeto.appendChild(titulo);
 
     let github = document.createElement('a');
     github.href = projeto.github;
-    github.target = "_blank"
-    github.textContent = ' Código no GitHub';
-    projetoCard.appendChild(github)
+    github.target = "_blank";
+    github.textContent = 'Código no GitHub';
+    descricaoProjeto.appendChild(github);
 
     let demo = document.createElement('a');
     demo.href = projeto.demo;
     demo.target = "_blank";
     demo.textContent = 'Ver demo';
-    projetoCard.appendChild(demo);
+    descricaoProjeto.appendChild(demo);
 
+    // Adicionando descrição ao card do projeto
+    projetoCard.appendChild(descricaoProjeto);
+
+    // Adicionando card à seção de projetos
     secaoProjetos.appendChild(projetoCard);
-
 }
 
 
