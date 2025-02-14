@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Sora:wght@100..800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -11,10 +12,11 @@ body{
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
+    overflow-x: hidden;
 
 }
 
-
+/* Temas */
 .tema-claro{
     background-color: #F5FFFA;
     color: #1A1A1A;
@@ -27,6 +29,7 @@ body{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Cabeçalho */
 header{
     display: flex;
     align-items: center;
@@ -38,12 +41,6 @@ header h1{
     margin: 0 auto;
 }
 
-input[type='button']{
-    font-family: 'Sora', sans-serif;
-    font-weight: bold;
-    background-color: rgb(237, 230, 222);
-}
-
 #botao {
     height: 30px;
     width: 100px;
@@ -51,12 +48,16 @@ input[type='button']{
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
+    background-color: rgb(237, 230, 222);
 }
 
+/* Main */
 main{
     flex: 1;
     font-family: 'Lexend', sans-serif;
 }
+
+/*Biografia*/
 
 #biografia{
     display: flex;
@@ -89,7 +90,7 @@ main{
     transform: scale(1.1);
 }
 
-
+/* Habilidades */
 #habilidades {
     display: flex;
     align-items: center;
@@ -141,10 +142,9 @@ main{
 .skill p{
     font-size: 12px;
 }
-.tema-claro-skill {
-    background-color: rgb(237, 230, 222);;
-}
 
+
+/* Projetos */
 #projetos {
     width: 100%;
     text-align: center;
@@ -180,9 +180,9 @@ main{
 }
 
 .projeto-card img {
-    width: 300px
+    width: 100%;
+    max-width: 300px;
 }
-
 
 .projeto-card a {
     display: inline-block;
@@ -198,6 +198,8 @@ main{
 .projeto-card a:hover{
     background: #483d8b; 
 }
+
+/* Contatos */
 
 .contatos-container {
     text-align: center;
@@ -215,24 +217,12 @@ main{
     margin-bottom: 20px;
 }
 
-.contatos-container  div a {
-    font-size: 40px;
-    text-decoration: none;
-    color:#5149ba;
-    padding: 10px;
-}
 
 .contatos-container  h2{
     margin-top: 100px;
     margin-bottom: 10px;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(128, 0, 128, 0.2);
-}
 
 .contatos div{
     transition: transform 0.2s ease-in-out;
@@ -241,4 +231,104 @@ footer {
 .contatos div:hover{
     transform: translateY(-5px);
 }
+
+.contatos-container  div a {
+    font-size: 40px;
+    text-decoration: none;
+    color:#5149ba;
+    padding: 10px;
+    
+}
+
+.contatos-container div p {
+    font-weight: bold;
+}
+
+/* Rodapé */
+footer {
+    font-family: 'Lexend', sans-serif;;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(128, 0, 128, 0.2);
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    #biografia {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #biografia div {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    #biografia img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    #biografia {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #biografia div {
+        width: 90%;
+    }
+
+    #biografia h2,p{
+        text-align: center;
+    }
+
+    #habilidades h2,
+    #projetos h2,
+    .contatos-container h2 {
+        font-size: 28px;
+    }
+
+    .skills-container {
+     
+        gap: 15px;
+    }
+
+    
+    .skill {
+        width: 80px;
+        height: 80px;
+    }
+
+    #projetos-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 0 20px ;
+
+    
+    }
+
+    .projeto-card img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #biografia div {
+        width: 100%;
+    }
+
+    .skills-container {
+        justify-content: center;
+        
+    }
+
+    .contatos-container .contatos {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
 
